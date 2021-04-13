@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab04_EDI", "Lab04_EDI.csproj", "{95444716-E554-490C-A6B1-73FA305322AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04", "..\..\..\source\repos\Lab04_EDI\Lab04\Lab04.csproj", "{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{95444716-E554-490C-A6B1-73FA305322AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95444716-E554-490C-A6B1-73FA305322AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95444716-E554-490C-A6B1-73FA305322AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95444716-E554-490C-A6B1-73FA305322AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
