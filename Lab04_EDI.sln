@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04", "..\..\..\source\repos\Lab04_EDI\Lab04\Lab04.csproj", "{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THash", "..\..\..\source\repos\Lab04_EDI\THash\THash.csproj", "{A7721EB9-EF5D-4216-B813-7D8F45B11A34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
