@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04", "..\..\..\source\re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THash", "..\..\..\source\repos\Lab04_EDI\THash\THash.csproj", "{A7721EB9-EF5D-4216-B813-7D8F45B11A34}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbol", "Arbol\Arbol.csproj", "{B40C2A16-7933-40FD-92DF-969E233FC629}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40C2A16-7933-40FD-92DF-969E233FC629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40C2A16-7933-40FD-92DF-969E233FC629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40C2A16-7933-40FD-92DF-969E233FC629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40C2A16-7933-40FD-92DF-969E233FC629}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
