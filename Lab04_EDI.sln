@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THash", "..\..\..\source\re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbol", "Arbol\Arbol.csproj", "{B40C2A16-7933-40FD-92DF-969E233FC629}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListaDobleEnlace", "ListaDobleEnlace\ListaDobleEnlace.csproj", "{0B86888E-AA35-49D5-9032-24AFFC8DC49B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B40C2A16-7933-40FD-92DF-969E233FC629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B40C2A16-7933-40FD-92DF-969E233FC629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B40C2A16-7933-40FD-92DF-969E233FC629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B86888E-AA35-49D5-9032-24AFFC8DC49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B86888E-AA35-49D5-9032-24AFFC8DC49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B86888E-AA35-49D5-9032-24AFFC8DC49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B86888E-AA35-49D5-9032-24AFFC8DC49B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

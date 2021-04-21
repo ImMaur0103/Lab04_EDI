@@ -6,7 +6,7 @@ namespace Arbol
 {
     public class Tarea 
     {
-        public int IDTarea { get; set; }
+        public int Prioridad { get; set; }
         public string Titulo { get; set; }
 
     }

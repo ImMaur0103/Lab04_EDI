@@ -13,6 +13,7 @@ namespace ListaDobleEnlace
 
         public T Valor
         {
+
             get { return valor; }
             set { valor = value; }
         }

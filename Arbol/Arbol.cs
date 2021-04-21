@@ -45,13 +45,13 @@ namespace Arbol
 
         private Nodo<T> InsertarNodo(Nodo<T> actual, Nodo<T> nuevo)
         {
-            if (nuevo.valor.Titulo.CompareTo(actual.valor.Titulo) > 0)//al ser mayor  se tiene que mover el arbol
+            if (nuevo.valor.Prioridad.CompareTo(actual.valor.Prioridad) > 0)//al ser mayor  se tiene que mover el arbol
             {
                 actual = RestructurarArbol(actual, nuevo);
                 actual = ArregloIndices(actual);
                 return actual;
             }
-            else if(nuevo.valor.Titulo.CompareTo(actual.valor.Titulo) < 0)//si es menor se tiene que verificar si se va a la derecha o a la izquierda
+            else if(nuevo.valor.Titulo.CompareTo(actual.valor.Prioridad) < 0)//si es menor se tiene que verificar si se va a la derecha o a la izquierda
             {
                 if (actual.izquierda == null)
                 {
@@ -201,7 +201,7 @@ namespace Arbol
             {
                 return 0;
             }
-            return recorrer.valor.IDTarea;
+            return recorrer.valor.Prioridad;
         }
 
         public void Delete()
