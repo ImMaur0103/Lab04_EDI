@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04", "..\..\..\source\repos\Lab04_EDI\Lab04\Lab04.csproj", "{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THash", "..\..\..\source\repos\Lab04_EDI\THash\THash.csproj", "{A7721EB9-EF5D-4216-B813-7D8F45B11A34}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbol", "Arbol\Arbol.csproj", "{B40C2A16-7933-40FD-92DF-969E233FC629}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListaDobleEnlace", "ListaDobleEnlace\ListaDobleEnlace.csproj", "{0B86888E-AA35-49D5-9032-24AFFC8DC49B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab04_EDI", "Lab04_EDI\Lab04_EDI.csproj", "{08901446-5D11-4437-8437-720B6BBF56E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "THash", "THash\THash.csproj", "{115E6F34-5BCD-4EDA-A9EC-DF6995E61EDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4C5584F-24FA-4646-AB4F-FA8DC9F0BB0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7721EB9-EF5D-4216-B813-7D8F45B11A34}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B40C2A16-7933-40FD-92DF-969E233FC629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B40C2A16-7933-40FD-92DF-969E233FC629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B40C2A16-7933-40FD-92DF-969E233FC629}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +25,14 @@ Global
 		{0B86888E-AA35-49D5-9032-24AFFC8DC49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B86888E-AA35-49D5-9032-24AFFC8DC49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B86888E-AA35-49D5-9032-24AFFC8DC49B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08901446-5D11-4437-8437-720B6BBF56E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08901446-5D11-4437-8437-720B6BBF56E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08901446-5D11-4437-8437-720B6BBF56E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08901446-5D11-4437-8437-720B6BBF56E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115E6F34-5BCD-4EDA-A9EC-DF6995E61EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115E6F34-5BCD-4EDA-A9EC-DF6995E61EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115E6F34-5BCD-4EDA-A9EC-DF6995E61EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115E6F34-5BCD-4EDA-A9EC-DF6995E61EDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
