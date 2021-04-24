@@ -52,7 +52,7 @@ namespace Lab04_EDI.Controllers
                         Usuarios.InsertarFinal(Usuario);
                         if (Usuario.Password == Login.Password && Usuario.User == Login.User)
                         {
-                            return View("");
+                            return View("Developer");
                         }
                     }
                 }
