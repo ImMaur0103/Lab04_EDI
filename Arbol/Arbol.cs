@@ -18,8 +18,51 @@ namespace Arbol
 
         ~Arbol() { }
 
-        // Insertar nodos en el árbol 
         public void Insertar(Tarea valor)
+        {
+            Nodo<T> NuevoNodo = new Nodo<T>();
+            NuevoNodo.valor = valor;
+            NuevoNodo.izquierda = null;
+            NuevoNodo.derecha = null;
+
+            if(raiz == null)
+            {
+                raiz = NuevoNodo;
+            }
+            else
+            {
+                raiz = InsertarNodo(raiz, NuevoNodo);
+            }
+            contador++;
+        }
+
+        private Nodo<T> InsertarNodo(Nodo<T> actual, Nodo<T> nuevo)
+        {
+            if(actual == null)
+            {
+                return nuevo;
+            }
+            if(actual.valor.Titulo.CompareTo(nuevo.valor.Titulo) < 0)
+            {
+                actual.derecha = InsertarNodo(actual.derecha, nuevo);
+                if(actual.derecha.valor.Prioridad < actual.valor.Prioridad)
+                {
+                    actual = RotarIzquierda(actual);
+                }
+            }
+            else
+            {
+                actual.izquierda = InsertarNodo(actual.izquierda, nuevo);
+                if(actual.izquierda.valor.Prioridad < actual.valor.Prioridad)
+                {
+                    actual = RotarDerecha(actual);
+                }
+            }
+            return actual;
+        }
+
+        // Insertar nodos en el árbol 
+        /*public void Insertar(Tarea valor)
         {
             Nodo<T> NuevoNodo = new Nodo<T>();
             NuevoNodo.valor = valor;
@@ -51,7 +94,7 @@ namespace Arbol
                 actual = ArregloIndices(actual);
                 return actual;
             }
-            else if(nuevo.valor.Titulo.CompareTo(actual.valor.Prioridad) < 0)//si es menor se tiene que verificar si se va a la derecha o a la izquierda
+            else if(nuevo.valor.Prioridad.CompareTo(actual.valor.Prioridad) < 0)//si es menor se tiene que verificar si se va a la derecha o a la izquierda
             {
                 if (actual.izquierda == null)
                 {
@@ -169,7 +212,8 @@ namespace Arbol
             {
                 return obtener.altura;
             }
-        }
+        }*/
+
 
         public int Buscar(string nombre)
         {
@@ -203,6 +247,77 @@ namespace Arbol
             }
             return recorrer.valor.Prioridad;
         }
+
+        public Nodo<T> Eliminar()
+        {
+            if (raiz == null)
+                return raiz;
+            else
+            {
+                //Si el nodo raiz del árbol tiene dos hijos
+                if (raiz.izquierda != null)
+                {
+                    if (raiz.derecha != null)
+                    {
+                        //Se valida la prioridad
+                        if (raiz.izquierda.valor.Prioridad < raiz.derecha.valor.Prioridad)
+                        {
+                            // Método rotar a la derecha
+                            raiz = RotarDerecha(raiz);
+                            raiz.derecha = Eliminar();
+                        }
+                        else
+                        {
+                            raiz = RotarIzquierda(raiz);
+                            raiz.izquierda = Eliminar();
+                        }
+                    }
+                    else
+                    {
+                        Nodo<T> auxiliar = raiz;
+                        raiz.valor = null;
+                        contador--;
+                        return auxiliar;
+                    }
+                }
+                else
+                {
+                    if (raiz.derecha != null)
+                    {
+                        Nodo<T> auxiliar = raiz;
+                        raiz.valor = null;
+                        contador--;
+                        return auxiliar;
+                    }
+                    else
+                    {
+                        // El nodo es hoja
+                        Nodo<T> auxiliar = raiz;
+                        raiz = null;
+                        contador--;
+                        return auxiliar;
+                    }
+                }
+            }
+            return raiz;
+        }
+
+        private Nodo<T> RotarDerecha(Nodo<T> nodo)
+        {
+            Nodo<T> auxilar = nodo.izquierda;
+            nodo.izquierda = auxilar.derecha;
+            auxilar.derecha = nodo;
+            return auxilar;
+        }
+
+        private Nodo<T> RotarIzquierda(Nodo<T> nodo)
+        {
+            Nodo<T> auxiliar = nodo.derecha;
+            nodo.derecha = auxiliar.izquierda;
+            auxiliar.izquierda = nodo;
+            return auxiliar;
+        }
+
 
         public void Delete()
         {
