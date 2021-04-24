@@ -204,59 +204,113 @@ namespace Arbol
             return recorrer.valor.Prioridad;
         }
 
+        /* public Nodo<T> Eliminar()
+         {
+             Nodo<T> NodoRaiz = raiz;
+
+             if (NodoRaiz == null)
+                 return NodoRaiz;
+             else
+             {
+                 //Si el nodo raiz del árbol tiene dos hijos
+                 if(NodoRaiz.izquierda != null)
+                 {
+                     if(NodoRaiz.derecha != null)
+                     {
+                         //Se valida la prioridad
+                         if(NodoRaiz.izquierda.valor.Prioridad < NodoRaiz.derecha.valor.Prioridad)
+                         {
+                             // Método rotar a la derecha
+                             NodoRaiz = RotarDerecha(NodoRaiz);
+                             NodoRaiz.derecha = Eliminar();
+                         }
+                         else
+                         {
+                             NodoRaiz = RotarIzquierda(NodoRaiz);
+                             NodoRaiz.izquierda = Eliminar();
+                         }
+                     }
+                     else
+                     {
+                         Nodo<T> auxiliar = NodoRaiz;
+                         NodoRaiz = null; 
+                         return auxiliar;
+                     }
+                 }
+                 else
+                 {
+                     if(NodoRaiz.derecha != null)
+                     {
+                         Nodo<T> auxiliar = NodoRaiz;
+                         NodoRaiz = null;
+                         return auxiliar;
+                     }
+                     else
+                     {
+                         // El nodo es hoja
+                         Nodo<T> auxiliar = NodoRaiz;
+                         NodoRaiz = null;
+                         return auxiliar;
+                     }
+                 }
+             }
+             return NodoRaiz;
+         }*/
+
         public Nodo<T> Eliminar()
         {
-            Nodo<T> NodoRaiz = raiz;
-
-            if (NodoRaiz == null)
-                return NodoRaiz;
+            if (raiz == null)
+                return raiz;
             else
             {
                 //Si el nodo raiz del árbol tiene dos hijos
-                if(NodoRaiz.izquierda != null)
+                if (raiz.izquierda != null)
                 {
-                    if(NodoRaiz.derecha != null)
+                    if (raiz.derecha != null)
                     {
                         //Se valida la prioridad
-                        if(NodoRaiz.izquierda.valor.Prioridad < NodoRaiz.derecha.valor.Prioridad)
+                        if (raiz.izquierda.valor.Prioridad < raiz.derecha.valor.Prioridad)
                         {
                             // Método rotar a la derecha
-                            NodoRaiz = RotarDerecha(NodoRaiz);
-                            NodoRaiz.derecha = Eliminar();
+                            raiz = RotarDerecha(raiz);
+                            raiz.derecha = Eliminar();
                         }
                         else
                         {
-                            NodoRaiz = RotarIzquierda(NodoRaiz);
-                            NodoRaiz.izquierda = Eliminar();
+                            raiz = RotarIzquierda(raiz);
+                            raiz.izquierda = Eliminar();
                         }
                     }
                     else
                     {
-                        Nodo<T> auxiliar = NodoRaiz;
-                        NodoRaiz = null; 
+                        Nodo<T> auxiliar = raiz;
+                        raiz.valor = null;
+                        contador--;
                         return auxiliar;
                     }
                 }
                 else
                 {
-                    if(NodoRaiz.derecha != null)
+                    if (raiz.derecha != null)
                     {
-                        Nodo<T> auxiliar = NodoRaiz;
-                        NodoRaiz = null;
+                        Nodo<T> auxiliar = raiz;
+                        raiz.valor = null;
+                        contador--;
                         return auxiliar;
                     }
                     else
                     {
                         // El nodo es hoja
-                        Nodo<T> auxiliar = NodoRaiz;
-                        NodoRaiz = null;
+                        Nodo<T> auxiliar = raiz;
+                        raiz = null;
+                        contador--; 
                         return auxiliar;
                     }
                 }
             }
-            return NodoRaiz;
+            return raiz;
         }
-        
+
         private Nodo<T> RotarDerecha(Nodo<T> nodo)
         {
             Nodo<T> auxilar = nodo.izquierda;
