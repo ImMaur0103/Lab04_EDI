@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Arbol\Arbol.csproj" />
+    <ProjectReference Include="..\ListaDobleEnlace\ListaDobleEnlace.csproj" />
+    <ProjectReference Include="..\THash\THash.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -11,6 +11,7 @@ namespace ListaDobleEnlace
         private Nodo<T> fin = new Nodo<T>();
         public int contador;
 
+
         public ListaDoble()
         {
             inicio = null;
