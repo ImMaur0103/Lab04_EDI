@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Arbol\Arbol.csproj" />
+    <ProjectReference Include="..\ListaDobleEnlace\ListaDobleEnlace.csproj" />
+    <ProjectReference Include="..\THash\THash.csproj" />
+  </ItemGroup>
+
 </Project>

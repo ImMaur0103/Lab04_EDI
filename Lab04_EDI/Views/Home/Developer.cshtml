@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Arbol.Tarea>
+
+@{
+    ViewData["Title"] = "Developer";
+}
+
+@using (Html.BeginForm(actionName: "Developer", controllerName: "Home", FormMethod.Get))
+{
+    <div class=" container">
+        <div id="content">
+            <ul id="tabs" class="nav nav-tabs" data-target="tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#tab1" data-toggle="tab">Ingresar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tab2" data-toggle="tab">Consultar</a>
+                </li>
+            </ul>
+            <div id="my-tab-content" class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div class="row">
+                        <div id="menu">
+                            <center><p><h4>Ingresar Tarea</h4></p></center>
+
+                            <label for="exampleInputEmail1" class="form-label">Título</label>
+                            <p>@Html.TextBox("Titulo", "", new { @class = "form-control" } )</p>
+                            <label for="exampleInputEmail1" class="form-label">Descripción</label>
+                            <p>@Html.TextArea("Descripcion", "", new { @class = "form-control" })</p>
+                            <label for="exampleInputEmail1" class="form-label">Proyecto</label>
+                            <p>@Html.TextBox("Proyecto", "", new { @class = "form-control" })</p>
+                            @{
+                                var listado = new List<SelectListItem>()
+                                                                                        {
+                                    new SelectListItem()
+                                    {
+                                        Text = "Alta",
+                                        Value = "1"
+                                    },
+                                    new SelectListItem()
+                                    {
+                                        Text = "Media",
+                                        Value = "2"
+                                    },
+                                    new SelectListItem()
+                                    {
+                                        Text = "Baja",
+                                        Value = "3"
+                                    }
+                                };
+                            }
+                            <br />
+                            <label>Prioridad:</label>
+                            @Html.DropDownList("Prioridad", listado)
+                            <p>
+                                <label for="exampleInputEmail1" class="form-label">Fecha de entrega</label>
+                                @Html.TextBox("Fecha", "", new { @class = "form-control" })
+                            </p>
+                            <p>
+                                <center>
+                                    <div class="form-group">
+                                        <input type="submit" value="Aceptar" class="btn btn-primary" />
+                                    </div>
+                                </center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane active" id="tab2">
+                    <div class="row">
+                        <div id="option">
+                            <!--Segunda vista de la tabla, donde se debe mostrar las tareas que debe realizar y le permite eliminar-->
+                            <tbody>
+                               @if (Model != null)
+                                {
+                                    <table class="table" cellpadding="0" cellspacing="0">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Titulo)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Prioridad)
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                             {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Titulo)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Prioridad)
+                                                    </td>
+                                                </tr>
+                                             }
+                                        </tbody>
+                                    </table>
+                                }
+                            </tbody>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
