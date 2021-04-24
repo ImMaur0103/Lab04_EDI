@@ -12,6 +12,8 @@ using System.IO;
 using System.Globalization;
 using CsvHelper;
 using ListaDobleEnlace;
+using Lab04_EDI.Extra;
+using Arbol;
 
 namespace Lab04_EDI.Controllers
 {
@@ -61,6 +63,32 @@ namespace Lab04_EDI.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Developer(string Titulo, string Descripcion, string Proyecto, string Prioridad, string Fecha)
+        {
+            InfoTarea NuevaTarea = new InfoTarea();
+            Tarea PrioridadT = new Tarea();
+            Singleton.Instance.HeapSort = null;
+
+            // Recibe información y la almacena dentro de la tabla hash
+            NuevaTarea.Titulo = Titulo;
+            NuevaTarea.Descripcion = Descripcion;
+            NuevaTarea.Proyecto = Proyecto;
+            NuevaTarea.FechaEntrega = Fecha;
+            NuevaTarea.Prioridad = Convert.ToInt32(Prioridad);
+
+            Singleton.Instance.Thash.Insertar(NuevaTarea, NuevaTarea.Titulo);
+
+            //Se agrega información dentro del heap
+            PrioridadT.Titulo = Titulo;
+            PrioridadT.Prioridad = Convert.ToInt32(Prioridad);
+
+            Singleton.Instance.THeap.Insertar(PrioridadT);
+
+            //Se insertan los elementos del árbol dentro de una lista
+
+            return View(Singleton.Instance.HeapSort);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

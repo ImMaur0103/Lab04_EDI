@@ -18,7 +18,51 @@ namespace Arbol
 
         ~Arbol() { }
 
-        // Insertar nodos en el árbol 
+        public void Insertar(Tarea valor)
+        {
+            Nodo<T> NuevoNodo = new Nodo<T>();
+            NuevoNodo.valor = valor;
+            NuevoNodo.izquierda = null;
+            NuevoNodo.derecha = null;
+
+            if (raiz == null)
+            {
+                raiz = NuevoNodo;
+            }
+            else
+            {
+                raiz = InsertarNodo(raiz, NuevoNodo);
+            }
+            contador++;
+        }
+
+        private Nodo<T> InsertarNodo(Nodo<T> actual, Nodo<T> nuevo)
+        {
+            if (actual == null)
+            {
+                return nuevo;
+            }
+            if (actual.valor.Titulo.CompareTo(nuevo.valor.Titulo) < 0)
+            {
+                actual.derecha = InsertarNodo(actual.derecha, nuevo);
+                if (actual.derecha.valor.Prioridad < actual.valor.Prioridad)
+                {
+                    actual = RotarIzquierda(actual);
+                }
+            }
+            else
+            {
+                actual.izquierda = InsertarNodo(actual.izquierda, nuevo);
+                if (actual.izquierda.valor.Prioridad < actual.valor.Prioridad)
+                {
+                    actual = RotarDerecha(actual);
+                }
+            }
+            return actual;
+        }
+
+
+        /* Insertar nodos en el árbol 
         public void Insertar(Tarea valor)
         {
             Nodo<T> NuevoNodo = new Nodo<T>();
@@ -169,7 +213,7 @@ namespace Arbol
             {
                 return obtener.altura;
             }
-        }
+        }*/
 
         public int Buscar(string nombre)
         {

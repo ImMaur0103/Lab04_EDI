@@ -3,21 +3,21 @@ using ListaDobleEnlace;
 
 namespace THash
 {
-    public class THash<T> : ListaDoble<T> where T : IComparable
+    public class THash<T> : ListaDoble<T> 
     {
         ListaDoble<T>[] HashTable = new ListaDoble<T>[10];
-        ListaDoble<T> Lista0 = new ListaDoble<T>();
-        ListaDoble<T> Lista1 = new ListaDoble<T>();
-        ListaDoble<T> Lista2 = new ListaDoble<T>();
-        ListaDoble<T> Lista3 = new ListaDoble<T>();
-        ListaDoble<T> Lista4 = new ListaDoble<T>();
-        ListaDoble<T> Lista5 = new ListaDoble<T>();
-        ListaDoble<T> Lista6 = new ListaDoble<T>();
-        ListaDoble<T> Lista7 = new ListaDoble<T>();
-        ListaDoble<T> Lista8 = new ListaDoble<T>();
-        ListaDoble<T> Lista9 = new ListaDoble<T>();
+        private ListaDoble<T> Lista0 = new ListaDoble<T>();
+        private ListaDoble<T> Lista1 = new ListaDoble<T>();
+        private ListaDoble<T> Lista2 = new ListaDoble<T>();
+        private ListaDoble<T> Lista3 = new ListaDoble<T>();
+        private ListaDoble<T> Lista4 = new ListaDoble<T>();
+        private ListaDoble<T> Lista5 = new ListaDoble<T>();
+        private ListaDoble<T> Lista6 = new ListaDoble<T>();
+        private ListaDoble<T> Lista7 = new ListaDoble<T>();
+        private ListaDoble<T> Lista8 = new ListaDoble<T>();
+        private ListaDoble<T> Lista9 = new ListaDoble<T>();
 
-        THash()
+        public THash()
         {
             HashTable[0] = Lista0;
             HashTable[1] = Lista1;
@@ -50,8 +50,10 @@ namespace THash
             return codigo;
         }
 
-        public void Insertar(T valor, int llave)
+        public void Insertar(T valor, string Titulo)
         {
+            int llave = Llave(Titulo);
+
             switch (llave)
             {
                 case 0:
