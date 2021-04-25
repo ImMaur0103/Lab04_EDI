@@ -23,14 +23,15 @@
                             <center><p><h4>Ingresar Tarea</h4></p></center>
 
                             <label for="exampleInputEmail1" class="form-label">Título</label>
-                            <p>@Html.TextBox("Titulo", "", new { @class = "form-control" } )</p>
+                            <p>@Html.TextBox("Titulo", "", new { @class = "form-control" })</p>
+                            <h5 class="text-primary"> @ViewBag.Mensaje </h5>
                             <label for="exampleInputEmail1" class="form-label">Descripción</label>
                             <p>@Html.TextArea("Descripcion", "", new { @class = "form-control" })</p>
                             <label for="exampleInputEmail1" class="form-label">Proyecto</label>
                             <p>@Html.TextBox("Proyecto", "", new { @class = "form-control" })</p>
                             @{
                                 var listado = new List<SelectListItem>()
-                                                                                        {
+                                {
                                     new SelectListItem()
                                     {
                                         Text = "Alta",

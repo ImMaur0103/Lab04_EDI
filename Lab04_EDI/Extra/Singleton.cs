@@ -16,7 +16,7 @@ namespace Lab04_EDI.Extra
         public THash<InfoTarea> Thash;
         public Arbol<Tarea> THeap;
         public ListaDoble<Tarea> HeapSort;
-
+        public THash<string> Titulos;
 
         private Singleton()
         {
@@ -24,6 +24,7 @@ namespace Lab04_EDI.Extra
             Thash = new THash<InfoTarea>();
             THeap = new Arbol<Tarea>();
             HeapSort = new ListaDoble<Tarea>();
+            Titulos = new THash<string>();
         }
 
         public static Singleton Instance

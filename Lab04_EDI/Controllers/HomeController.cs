@@ -67,28 +67,73 @@ namespace Lab04_EDI.Controllers
 
         public IActionResult Developer(string Titulo, string Descripcion, string Proyecto, string Prioridad, string Fecha)
         {
+            Arbol<Tarea> HeapTarea;
             InfoTarea NuevaTarea = new InfoTarea();
             Tarea PrioridadT = new Tarea();
-            Singleton.Instance.HeapSort = null;
+            //Singleton.Instance.HeapSort;
 
-            // Recibe información y la almacena dentro de la tabla hash
-            NuevaTarea.Titulo = Titulo;
-            NuevaTarea.Descripcion = Descripcion;
-            NuevaTarea.Proyecto = Proyecto;
-            NuevaTarea.FechaEntrega = Fecha;
-            NuevaTarea.Prioridad = Convert.ToInt32(Prioridad);
+            if (Verificar(Titulo))
+            {
+                // Recibe información y la almacena dentro de la tabla hash
+                NuevaTarea.Titulo = Titulo;
+                NuevaTarea.Descripcion = Descripcion;
+                NuevaTarea.Proyecto = Proyecto;
+                NuevaTarea.FechaEntrega = Fecha;
+                NuevaTarea.Prioridad = Convert.ToInt32(Prioridad);
 
-            Singleton.Instance.Thash.Insertar(NuevaTarea, NuevaTarea.Titulo);
+                Singleton.Instance.Thash.Insertar(NuevaTarea, NuevaTarea.Titulo);
 
-            //Se agrega información dentro del heap
-            PrioridadT.Titulo = Titulo;
-            PrioridadT.Prioridad = Convert.ToInt32(Prioridad);
+                //Se agrega información dentro del heap
+                PrioridadT.Titulo = Titulo;
+                PrioridadT.Prioridad = Convert.ToInt32(Prioridad);
 
-            Singleton.Instance.THeap.Insertar(PrioridadT);
+                Singleton.Instance.THeap.Insertar(PrioridadT);
 
-            //Se insertan los elementos del árbol dentro de una lista
 
-            return View(Singleton.Instance.HeapSort);
+                //.Instance.HeapSort.Vaciar();
+                HeapTarea = new Arbol<Tarea>();
+                HeapTarea = Singleton.Instance.THeap;
+
+                Singleton.Instance.HeapSort.InsertarFinal(HeapTarea.Eliminar().valor);
+
+                return View(Singleton.Instance.HeapSort);
+            }
+            else
+            {
+                ViewBag.Mensaje = "Título incorrecto, intente de nuevo";
+                return View();
+            } 
+        }
+
+        private bool Verificar(string titulo)
+        {
+            titulo = titulo.ToLower();
+            titulo = titulo.Replace(" ", "");
+            string valor;
+
+            if(Singleton.Instance.Titulos.contador > 0)
+            {
+                for (int i = 0; i < Singleton.Instance.Titulos.contador; i++)
+                {
+                    valor = Singleton.Instance.Titulos.ObtenerValor(i);
+                    if(valor == titulo)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        Singleton.Instance.Titulos.InsertarInicio(titulo);
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                Singleton.Instance.Titulos.InsertarInicio(titulo);
+                return true;
+            }
+
+            return false;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
