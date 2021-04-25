@@ -6,16 +6,16 @@ namespace THash
     public class THash<T> : ListaDoble<T> 
     {
         ListaDoble<T>[] HashTable = new ListaDoble<T>[10];
-        private ListaDoble<T> Lista0 = new ListaDoble<T>();
-        private ListaDoble<T> Lista1 = new ListaDoble<T>();
-        private ListaDoble<T> Lista2 = new ListaDoble<T>();
-        private ListaDoble<T> Lista3 = new ListaDoble<T>();
-        private ListaDoble<T> Lista4 = new ListaDoble<T>();
-        private ListaDoble<T> Lista5 = new ListaDoble<T>();
-        private ListaDoble<T> Lista6 = new ListaDoble<T>();
-        private ListaDoble<T> Lista7 = new ListaDoble<T>();
-        private ListaDoble<T> Lista8 = new ListaDoble<T>();
-        private ListaDoble<T> Lista9 = new ListaDoble<T>();
+        public ListaDoble<T> Lista0 = new ListaDoble<T>();
+        public ListaDoble<T> Lista1 = new ListaDoble<T>();
+        public ListaDoble<T> Lista2 = new ListaDoble<T>();
+        public ListaDoble<T> Lista3 = new ListaDoble<T>();
+        public ListaDoble<T> Lista4 = new ListaDoble<T>();
+        public ListaDoble<T> Lista5 = new ListaDoble<T>();
+        public ListaDoble<T> Lista6 = new ListaDoble<T>();
+        public ListaDoble<T> Lista7 = new ListaDoble<T>();
+        public ListaDoble<T> Lista8 = new ListaDoble<T>();
+        public ListaDoble<T> Lista9 = new ListaDoble<T>();
 
         public THash()
         {

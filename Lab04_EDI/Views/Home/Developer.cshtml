@@ -94,6 +94,9 @@
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.Prioridad)
                                                     </td>
+                                                    <td>
+                                                        <button class="btn btn-primary" onclick="location.href='@Url.Action("Eliminar", "Home", new { id = "Eliminar"})'" name="option1" type="button" id="Eliminar">Completada</button>
+                                                    </td>
                                                 </tr>
                                              }
                                         </tbody>

@@ -14,6 +14,7 @@ using CsvHelper;
 using ListaDobleEnlace;
 using Lab04_EDI.Extra;
 using Arbol;
+using THash;
 
 namespace Lab04_EDI.Controllers
 {
@@ -105,6 +106,12 @@ namespace Lab04_EDI.Controllers
             } 
         }
 
+        public IActionResult Eliminar()
+        {
+            //Falta implementar
+            return View("Developer");
+        }
+
         private bool Verificar(string titulo)
         {
             titulo = titulo.ToLower();
@@ -135,6 +142,110 @@ namespace Lab04_EDI.Controllers
 
             return false;
         }
+
+        private InfoTarea ObtenerValor(string Titulo)
+        {
+            THash<InfoTarea> hash = new THash<InfoTarea>();
+            hash = Singleton.Instance.Thash;
+            int llave = hash.Llave(Titulo);
+            InfoTarea valor = new InfoTarea();
+
+            switch (llave)
+            {
+                case 0:
+                    for(int i = 0; i < hash.Lista0.contador; i++)
+                    {
+                        if(hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 1:
+                    for (int i = 0; i < hash.Lista1.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < hash.Lista2.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < hash.Lista3.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < hash.Lista4.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 5:
+                    for (int i = 0; i < hash.Lista5.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 6:
+                    for (int i = 0; i < hash.Lista6.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 7:
+                    for (int i = 0; i < hash.Lista7.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 8:
+                    for (int i = 0; i < hash.Lista8.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+                case 9:
+                    for (int i = 0; i < hash.Lista9.contador; i++)
+                    {
+                        if (hash.ObtenerValor(i).Titulo == Titulo)
+                        {
+                            valor = hash.ObtenerValor(i);
+                        }
+                    }
+                    break;
+            }
+            return valor;
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
